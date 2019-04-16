@@ -14,7 +14,11 @@ func (s *Server) CheckCookie(ctx context.Context, in *pb.CookieRequest) (*pb.Use
 
 	user, err := InfoFromCookie(in.JwtToken)
 	if err != nil {
-		return nil, err
+		return &pb.UserInfoResponse{
+				Valid: false,
+				User:  nil,
+			},
+			nil
 	}
 
 	return &pb.UserInfoResponse{

@@ -21,7 +21,7 @@ func InfoFromCookie(tokenStr string) (userInfo pb.UserInfo, err error) {
 	var token *jwt.Token
 	token, err = CheckTocken(tokenStr)
 	if err != nil {
-		config.Logger.Warnw("InfoFromCookie",
+		config.Logger.Warnw("InfoFromCookie -> CheckTocken",
 			"warn", err.Error())
 
 		return
@@ -49,6 +49,7 @@ func CheckTocken(tokenStr string) (token *jwt.Token, err error) {
 	})
 
 	if err != nil {
+		fmt.Println("HERE")
 		return nil, err
 	}
 
