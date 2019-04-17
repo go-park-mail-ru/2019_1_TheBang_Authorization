@@ -49,7 +49,6 @@ func CheckTocken(tokenStr string) (token *jwt.Token, err error) {
 	})
 
 	if err != nil {
-		fmt.Println("HERE")
 		return nil, err
 	}
 

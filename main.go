@@ -27,4 +27,6 @@ func main() {
 		config.Logger.Fatalw("serve port",
 			"error:", err.Error())
 	}
+
+	config.Logger.Info(fmt.Sprint("Auth server started!"))
 }
